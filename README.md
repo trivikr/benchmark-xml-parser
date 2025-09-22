@@ -11,12 +11,10 @@ Benchmarks parsing time between different XML Parsers from npm
 
 Run `yarn benchmark`
 
-Example run
-
 ### Node.js v22.19.0
 
 ```console
-fast-xml-parser x 67,588 ops/sec ±0.48% (99 runs sampled)
-xmldom x 77,250 ops/sec ±1.46% (97 runs sampled)
-Fastest is xmldom
+fast-xml-parser@5.2.5 x 68,980 ops/sec ±0.48% (93 runs sampled)
+xmldom@0.8.11 x 75,774 ops/sec ±0.59% (94 runs sampled)
+Fastest is xmldom@0.8.11
 ```

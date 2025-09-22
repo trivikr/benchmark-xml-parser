@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFile, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -14,11 +14,24 @@ const suite = new benchmark.Suite();
 const fastXmlParser = new XMLParser();
 const domParser = new DOMParser();
 
+const fastXmlParserVersion = JSON.parse(
+  readFileSync(
+    join(__dirname, "node_modules", "fast-xml-parser", "package.json")
+  ).toString()
+).version;
+const xmldomVersion = JSON.parse(
+  readFileSync(
+    join(__dirname, "node_modules", "@xmldom", "xmldom", "package.json")
+  )
+    .toString()
+    .replace(/\^/g, "")
+).version;
+
 suite
-  .add("fast-xml-parser", function () {
+  .add(`fast-xml-parser@${fastXmlParserVersion}`, function () {
     fastXmlParser.parse(xmlData);
   })
-  .add("xmldom", function () {
+  .add(`xmldom@${xmldomVersion}`, function () {
     domParser.parseFromString(xmlData, "application/xml");
   })
   .on("cycle", function (event) {
