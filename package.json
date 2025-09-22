@@ -1,7 +1,16 @@
 {
   "name": "benchmark-xml-parser",
+  "description": "Benchmarks parsing time between different XML Parsers from npm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
   "packageManager": "yarn@4.10.2",
+  "scripts": {
+    "benchmark": "node index.js"
+  },
   "dependencies": {
-    "benchmark": "^2.1.4"
+    "@xmldom/xmldom": "^0.8.11",
+    "benchmark": "^2.1.4",
+    "fast-xml-parser": "^5.2.5"
   }
 }

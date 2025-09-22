@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListAllMyBucketsResult>
+   <Buckets>
+      <Bucket>
+         <BucketArn>string</BucketArn>
+         <BucketRegion>string</BucketRegion>
+         <CreationDate>timestamp</CreationDate>
+         <Name>string</Name>
+      </Bucket>
+   </Buckets>
+   <Owner>
+      <DisplayName>string</DisplayName>
+      <ID>string</ID>
+   </Owner>
+   <ContinuationToken>string</ContinuationToken>
+   <Prefix>string</Prefix>
+</ListAllMyBucketsResult>
