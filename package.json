@@ -1,0 +1,7 @@
+{
+  "name": "benchmark-xml-parser",
+  "packageManager": "yarn@4.10.2",
+  "dependencies": {
+    "benchmark": "^2.1.4"
+  }
+}
