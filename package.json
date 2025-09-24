@@ -9,7 +9,7 @@
     "benchmark": "node index.js"
   },
   "dependencies": {
-    "@xmldom/xmldom": "^0.8.11",
+    "@xmldom/xmldom": "^0.9.8",
     "benchmark": "^2.1.4",
     "fast-xml-parser": "^5.2.5"
   }
