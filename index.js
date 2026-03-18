@@ -11,7 +11,7 @@ const fileNamePath = join(__dirname, "data", "sample.xml");
 const xmlData = readFileSync(fileNamePath).toString();
 
 const suite = new benchmark.Suite();
-const fastXmlParser = new XMLParser();
+const fastXmlParser = new XMLParser({ processEntities: false });
 const domParser = new DOMParser();
 
 const fastXmlParserVersion = JSON.parse(
