@@ -1,10 +1,11 @@
-import { readFile, readFileSync } from "node:fs";
+import { DOMParser } from "@xmldom/xmldom";
+import benchmark from "benchmark";
+import { XMLParser } from "fast-xml-parser";
+import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import benchmark from "benchmark";
-import { XMLParser } from "fast-xml-parser";
-import { DOMParser } from "@xmldom/xmldom";
+import { parseXML } from "./lib/aws-custom-xml-parser.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const fileNamePath = join(__dirname, "data", "sample.xml");
@@ -15,16 +16,12 @@ const fastXmlParser = new XMLParser({ processEntities: false });
 const domParser = new DOMParser();
 
 const fastXmlParserVersion = JSON.parse(
-  readFileSync(
-    join(__dirname, "node_modules", "fast-xml-parser", "package.json")
-  ).toString()
+  readFileSync(join(__dirname, "node_modules", "fast-xml-parser", "package.json")).toString(),
 ).version;
 const xmldomVersion = JSON.parse(
-  readFileSync(
-    join(__dirname, "node_modules", "@xmldom", "xmldom", "package.json")
-  )
+  readFileSync(join(__dirname, "node_modules", "@xmldom", "xmldom", "package.json"))
     .toString()
-    .replace(/\^/g, "")
+    .replace(/\^/g, ""),
 ).version;
 
 suite
@@ -33,6 +30,9 @@ suite
   })
   .add(`xmldom@${xmldomVersion}`, function () {
     domParser.parseFromString(xmlData, "application/xml");
+  })
+  .add(`AWS SDK custom parser`, function () {
+    parseXML(xmlData);
   })
   .on("cycle", function (event) {
     console.log(String(event.target));
