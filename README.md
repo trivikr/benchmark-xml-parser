@@ -14,23 +14,23 @@ Run `yarn benchmark`
 ### Node.js v20.20.1
 
 ```console
-fast-xml-parser@5.5.6 x 36.91 ops/sec ±6.18% (52 runs sampled)
-xmldom@0.8.11 x 58.57 ops/sec ±7.39% (63 runs sampled)
-Fastest is xmldom@0.8.11
+fast-xml-parser@5.5.6 x 36.99 ops/sec ±7.10% (52 runs sampled)
+xmldom@0.9.8 x 24.20 ops/sec ±5.15% (44 runs sampled)
+Fastest is fast-xml-parser@5.5.6
 ```
 
 ### Node.js v22.22.1
 
 ```console
-fast-xml-parser@5.5.6 x 37.80 ops/sec ±1.05% (63 runs sampled)
-xmldom@0.8.11 x 71.73 ops/sec ±1.27% (73 runs sampled)
-Fastest is xmldom@0.8.11
+fast-xml-parser@5.5.6 x 38.98 ops/sec ±3.82% (53 runs sampled)
+xmldom@0.9.8 x 24.46 ops/sec ±4.23% (45 runs sampled)
+Fastest is fast-xml-parser@5.5.6
 ```
 
 ### Node.js v24.14.0
 
 ```console
-fast-xml-parser@5.5.6 x 39.94 ops/sec ±2.85% (54 runs sampled)
-xmldom@0.8.11 x 79.24 ops/sec ±1.66% (69 runs sampled)
-Fastest is xmldom@0.8.11
+fast-xml-parser@5.5.6 x 37.10 ops/sec ±4.34% (53 runs sampled)
+xmldom@0.9.8 x 29.96 ops/sec ±0.41% (54 runs sampled)
+Fastest is fast-xml-parser@5.5.6
 ```
