@@ -11,6 +11,6 @@
   "dependencies": {
     "@xmldom/xmldom": "^0.8.11",
     "benchmark": "^2.1.4",
-    "fast-xml-parser": "^5.2.5"
+    "fast-xml-parser": "^5.5.6"
   }
 }
