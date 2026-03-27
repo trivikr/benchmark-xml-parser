@@ -6,11 +6,17 @@
   "type": "module",
   "packageManager": "yarn@4.13.0",
   "scripts": {
-    "benchmark": "node index.js"
+    "benchmark": "node index.js",
+    "benchmark-mise": "mise use node@20.20.1 && node index && mise use node@22.22.1 && node index && mise use node@24.14.0 && node index",
+    "format": "npx prettier --write ./index.js ./lib"
   },
   "dependencies": {
+    "@aws-sdk/xml-builder": "^3.972.11",
     "@xmldom/xmldom": "^0.8.11",
     "benchmark": "^2.1.4",
     "fast-xml-parser": "^5.5.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1"
   }
 }
